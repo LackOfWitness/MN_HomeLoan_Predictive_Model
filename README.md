@@ -1,3 +1,8 @@
+
+<div style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); border: 1px solid #ddd; padding: 20px; margin: 20px 0;">
+    <img src="Readme Graphic.jpg" alt="Project Header Image" style="width: 100%; height: auto;">
+</div>
+
 # MN_HomeLoan_Predictive_Model# HMDA Loan Data Analysis and Predictive Modeling Documentation
 
 ## Overview
