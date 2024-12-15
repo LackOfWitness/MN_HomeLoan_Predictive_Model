@@ -17,6 +17,8 @@ and predictive modeling using KNN classification. For visualization of the data,
   - sklearn: Machine learning utilities and modeling
   - matplotlib: Data visualization
   - seaborn: Statistical data visualization
+  - sqlite3: Database management
+  - sqlalchemy: Database ORM
 
 ## Data Source & Initial Statistics
 - Original dataset: `2023_State_MN_HMDA_loan_data(all loan_purpose).csv`
@@ -145,6 +147,15 @@ Mapped numeric codes to descriptive values for better interpretability:
   - Upper threshold: Approximately $750,000
   - Most outliers concentrated in metropolitan areas
 
+### Data Storage and Processing
+- **SQLite Database Implementation:**
+
+  - Utilized SQLite for efficient data storage and querying
+  - Leveraged SQLAlchemy ORM for database interactions
+  - Integrated with pandas for seamless data querying
+  - Implemented in Google Colab environment for collaborative analysis
+  - Key libraries used: pandas, sqlite3, sqlalchemy
+
 ## Machine Learning Implementation
 
 ### KNeighbors Classifier Model
@@ -239,13 +250,14 @@ The KNeighbors Classifier model produced the following performance metrics:
 
 #### Data Source:
 - The data for the Tableau dashboard was the same as the data used for the model.
-- Financial Institution was identified and merged with the appropiate LEI identifier (performed in Excel using Power Query).
+- Financial Institution were identified and merged with the appropiate LEI identifier (performed in Excel using Power Query).
 - County names were merged with the appropiate county INCITS codes (performed in Excel using Power Query) - allowed for the creation of a map of the United States.
 - Public link to the Tableau dashboard can be found [here](https://public.tableau.com/app/profile/sergei.sergeev/viz/MinnesotaLoanApplicationApprovalHMDAProject4/Dashboard1?publish=yes).
 
 #### Purpose:
-- Serves as a dynamic filter for other charts
-- Allows users to analyze data at a county level by selecting individual counties on the map
+- The Tableau dashboard provides a comprehensive analysis of loan applications across counties and their outcomes, 
+categorized by loan types and purposes. 
+- Allows users to analyze data at a county level by selecting individual counties on the map (heat-map style)
 
 #### Visualization:
 - A colored map of counties, highlighting geographic data for loans (allowed for filtering of dashboard data by county)
@@ -263,8 +275,15 @@ The KNeighbors Classifier model produced the following performance metrics:
   - Count of accepted applications 
   - Corresponding average loan amounts
 
+### Tool Tips Display: 
+- Average loan amount for each loan type: full data set
+- Average income for each loan type: full data set
+- Average loan amount for each loan type (condition: accepted or denied)
+- Average income for each loan type (condition: accepted or denied)
+- Total number of accepted/denied applications for each loan type
+
 #### Key Observations:
-- Home Purchase loans have highest acceptance count (~$311,174.43)
+- Home Purchase loans have highest acceptance count (~$311,174.43) - (in both accepted and denied categories)
 - Cash-out refinancing and Refinancing show moderate counts but significant loan amounts
 - Home improvement and other purposes have fewer accepted applications
 
@@ -320,6 +339,7 @@ The Tableau dashboard effectively analyzes loan application outcomes across mult
 - Average loan amounts by type
 
 The dynamic county filter provides flexibility for users to examine regional trends, supporting data-driven decision making in loan performance analysis.
+This helps us better to understand the loan application process, the dataset used by the k-neighbors classifier model and the factors that affect the loan approval process.
 
 ## Future Model Recommendations and Improvements to Consider
 
@@ -331,6 +351,7 @@ The dynamic county filter provides flexibility for users to examine regional tre
 
 ### 2. Data Pipeline Improvements
 - Automated data cleaning process
+- Include data from other years to improve the model
 - Real-time prediction capabilities
 - Model performance monitoring
 - Regular retraining schedule
@@ -366,7 +387,6 @@ The cleaned dataset and model are ready for:
 - Balanced data completeness with sample size
 - Maintained audit trail of cleaning steps
 
-
 ## Project Contributors
 
 ### Sergei Sergeev
@@ -385,7 +405,7 @@ The cleaned dataset and model are ready for:
 
 ### Maud Rashid
 - Contributions:
-  - SVMS Model implementation
+  - SVM Model implementation
   - Research and analysis of the data
   - Documentation
   - Tableau dashboard development
