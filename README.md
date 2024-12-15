@@ -244,6 +244,67 @@ The KNeighbors Classifier model produced the following performance metrics:
 - Performance metrics heavily influenced by class imbalance
 - Model shows signs of overfitting to majority class
 
+
+## Random Forest Model Performance
+
+### Model Configuration
+- Utilized RandomForestClassifier from scikit-learn
+- Features standardized using StandardScaler
+- Data split into training and test sets
+- Focused on binary classification (Approval/Denial)
+
+### Model Performance Metrics
+
+The Random Forest model demonstrated the following performance characteristics:
+
+#### Confusion Matrix Results
+                  Predicted 0    Predicted 1
+    Actual 0           2            111
+    Actual 1           8           15533
+
+#### Binary Classification Results
+- Class 0 (Loan Denials):
+  - Precision: 0.20 - Of predicted denials, 20% were actual denials
+  - Recall: 0.02 - The model correctly identified 2% of actual loan denials
+  - F1-Score: 0.03 - Harmonic mean of precision and recall for denials
+  - Support: 113 cases in test set
+
+- Class 1 (Loan Approvals):
+  - Precision: 0.99 - Near perfect precision in identifying approvals
+  - Recall: 1.00 - Successfully identified almost all actual approvals
+  - F1-Score: 1.00 - Perfect balanced score for approvals
+  - Support: 15,541 cases in test set
+
+#### Overall Model Performance
+- Accuracy: 99.24% - High overall accuracy driven by majority class
+- Macro Average:
+  - Precision: 0.60 - Simple average of class precisions
+  - Recall: 0.51 - Simple average of class recalls
+  - F1-Score: 0.51 - Average balanced performance
+- Weighted Average:
+  - Precision: 0.99
+  - Recall: 0.99
+  - F1-Score: 0.99
+  - Accounts for class imbalance in calculations
+
+#### Analysis of Results
+- Model shows strong performance on majority class (approvals)
+- Significant struggles with minority class prediction (denials)
+- Very low recall for denials indicates:
+  - Model rarely predicts denials
+  - Misses most actual denial cases
+- Performance heavily skewed by class imbalance
+- Clear signs of majority class bias
+
+#### Model Limitations
+- Severe impact of class imbalance
+- Poor denial detection capabilities
+- Critical need for improvement through:
+  - Advanced sampling techniques
+  - Class balancing methods
+  - Feature engineering
+  - Alternative model architectures
+
 ## Data Visualization Analysis in Tableau
 
 ### 1. County Map Filter (Top Left)
