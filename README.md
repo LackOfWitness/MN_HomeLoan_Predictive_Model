@@ -3,7 +3,8 @@
     <img src="Readme Graphic.jpg" alt="Project Header Image" style="width: 100%; height: auto;">
 </div>
 
-# MN_HomeLoan_Predictive_Model# HMDA Loan Data Analysis and Predictive Modeling Documentation
+# MN_HomeLoan_Predictive_Model
+# HMDA Loan Data Analysis and Predictive Modeling Documentation
 
 ## Overview
 This documentation details the comprehensive data analysis and modeling process for the 2023 Minnesota HMDA (Home Mortgage Disclosure Act) loan application dataset, including data cleaning, exploratory analysis, 
