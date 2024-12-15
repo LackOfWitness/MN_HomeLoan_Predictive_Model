@@ -3,7 +3,6 @@
     <img src="Readme Graphic.jpg" alt="Project Header Image" style="width: 100%; height: auto;">
 </div>
 
-# MN_HomeLoan_Predictive_Model
 # HMDA Loan Data Analysis and Predictive Modeling Documentation
 
 ## Overview
